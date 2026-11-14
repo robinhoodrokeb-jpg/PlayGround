@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fff8ec">
+  <title>Property Tycoon — Neighborhood Rent Tracker</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏡</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell" id="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <span class="brand-house">🏡</span>
+          <span class="brand-coin">🪙</span>
+        </div>
+        <div class="brand-copy">
+          <h1>Property Tycoon</h1>
+          <p>Neighborhood rent tracker</p>
+        </div>
+      </div>
+
+      <div class="dashboard" id="dashboard" aria-label="Global dashboard"></div>
+
+      <div class="top-actions">
+        <button class="icon-btn" data-action="toggle-sound" id="sound-btn" title="Toggle sound" aria-label="Toggle sound">🔊</button>
+        <button class="icon-btn" data-action="open-settings" title="Settings & backup" aria-label="Settings and backup">⚙️</button>
+      </div>
+    </header>
+
+    <div class="controlbar">
+      <nav class="tabs" aria-label="Screens">
+        <button class="tab" data-action="nav-map" data-nav="map">🏘️ <span>Neighborhood</span></button>
+        <button class="tab" data-action="nav-ledger" data-nav="ledger">📒 <span>Ledger</span></button>
+      </nav>
+
+      <div class="month-chip" id="month-chip"></div>
+
+      <div class="xp-wrap" id="xp-wrap" title="Landlord XP"></div>
+
+      <div class="primary-actions">
+        <button class="btn collect-btn" id="collect-btn" data-action="start-collection">🪙 <span>Rent Collection Day</span></button>
+        <button class="btn advance-btn" id="advance-btn" data-action="advance-month">📅 <span>Advance Month</span></button>
+      </div>
+    </div>
+
+    <div id="banner-slot"></div>
+    <main id="view" tabindex="-1"></main>
+
+    <footer class="footer">
+      <span id="save-state">Saved locally</span>
+      <span class="footer-dot">•</span>
+      <span>Your books never leave this device.</span>
+      <button class="link-btn" data-action="open-settings">Backup</button>
+    </footer>
+  </div>
+
+  <div id="modal-root"></div>
+  <div id="fx" aria-hidden="true"></div>
+  <div id="toasts" class="toasts" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
